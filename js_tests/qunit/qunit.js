@@ -36,7 +36,7 @@ var defined = {
 		} catch ( e ) {
 			return false;
 		}
-	}() )
+	} )
 };
 
 var fileName = ( sourceFromStacktrace( 0 ) || "" ).replace( /(:\d+)+\)?/, "" ).replace( /.+\//, "" );
@@ -156,7 +156,10 @@ function is( type, obj ) {
 // Doesn't support IE9, it will return undefined on these browsers
 // See also https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error/Stack
 function extractStacktrace( e, offset ) {
-	offset = offset === undefined ? 4 : offset;
+    
+    if ( offset === undefined ) {
+        offset = 4;
+    }
 
 	var stack, include, i;
 
