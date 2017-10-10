@@ -8,7 +8,8 @@ from django.urls import reverse
 
 class Action(models.Model):
     name = models.CharField(max_length=50, primary_key=True)
-    description = models.CharField(max_length=70)
+    max_length=70
+    description = models.CharField(max_length)
 
     def __str__(self):
         return self.name
@@ -50,7 +51,8 @@ class ActionAdmin(admin.ModelAdmin):
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=20)
+    max_length=20
+    name = models.CharField(max_length)
 
 
 class PersonAdmin(admin.ModelAdmin):
@@ -65,7 +67,8 @@ class PersonAdmin(admin.ModelAdmin):
 
 
 class Car(models.Model):
-    name = models.CharField(max_length=20)
+    max_length=20
+    name = models.CharField(max_length)
 
 
 class CarAdmin(admin.ModelAdmin):
